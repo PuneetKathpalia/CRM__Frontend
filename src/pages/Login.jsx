@@ -69,7 +69,7 @@ const Login = () => {
     } catch (err) {
       console.error("Auth error:", err);
       if (err.message.includes("Failed to fetch") || err.message.includes("NetworkError")) {
-        setError("Cannot connect to server. Please make sure the backend is running on http://localhost:8000");
+        setError(`Cannot connect to server. Please make sure the backend is running on ${API_BASE}`);
       } else if (err.message.includes("Server error")) {
         setError(err.message);
       } else {
